@@ -19,7 +19,13 @@ namespace Usodetrypass
 
             int numero;
 
-            numero = int.Parse(dato);
+            // numero = int.Parse(dato);
+
+            while (int.TryParse(dato, out numero) == false)
+            {
+                Console.WriteLine("ERROR!!! Reintente el ingreso de edad: ");
+                dato = Console.ReadLine();
+            }
         }
     }
 }
